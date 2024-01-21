@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header-container {
+} */
+
+.header-text {
+  margin: 0;
+}
