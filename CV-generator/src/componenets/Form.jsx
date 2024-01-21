@@ -1,7 +1,12 @@
+import Thumbnail from "./form/Thumbnail";
+
 export default function Form() {
   return (
-    <>
-      <div></div>
+    <div className="flex flex-col items-center justify-center mt-20">
+      <Thumbnail title={"Personal detail"}></Thumbnail>
+      <Thumbnail title={"Education"}></Thumbnail>
+      <Thumbnail title={"Experience"}></Thumbnail>
+
       {/* 1. Load example button
         2. Clear input
         3. Box to fill Personal Details
@@ -9,6 +14,6 @@ export default function Form() {
         5. Experience
         6. Print button
         */}
-    </>
+    </div>
   );
 }
