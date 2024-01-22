@@ -3,7 +3,14 @@ import Thumbnail from "./form/Thumbnail";
 export default function Form() {
   return (
     <div className="flex flex-col items-center justify-center mt-20">
-      <Thumbnail title={"Personal detail"}></Thumbnail>
+      <Thumbnail title={"Personal detail"}>
+        <h1>asldkflaksdflk</h1>
+
+        <h1>asldkflaksdflk</h1>
+
+        <h1>asldkflaksdflk</h1>
+        <h1>asldkflaksdflk</h1>
+      </Thumbnail>
       <Thumbnail title={"Education"}></Thumbnail>
       <Thumbnail title={"Experience"}></Thumbnail>
 
