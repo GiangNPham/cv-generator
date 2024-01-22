@@ -26,7 +26,7 @@ function Thumbnail({ title, children }) {
         timeout={300}
         unmountOnExit
       >
-        <div className="thumbnail-children-container w-full border-t-4 border-secondary">
+        <div className="thumbnail-children-container w-full border-t-2 border-secondary">
           {children}
         </div>
       </CSSTransition>
