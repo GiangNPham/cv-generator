@@ -2,83 +2,83 @@ import { useState } from "react";
 import Input from "../form/Input";
 import { v4 as uuid } from "uuid";
 
-export default function EducationForm({
-  educationItem,
-  setEducationItem,
+export default function ExperienceForm({
+  experienceItem,
+  setExperienceItem,
   isEditted = false,
   setIsEditted = undefined,
   edittedItem = {
     id: "",
-    school: "",
-    degree: "",
+    companyName: "",
+    title: "",
     startDate: "",
     endDate: "",
     location: "",
+    description: "",
   },
   setEdittedItem,
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [education, setEducation] = useState({
+  const [experience, setExperience] = useState({
     id: "",
-    school: "",
-    degree: "",
+    companyName: "",
+    title: "",
     startDate: "",
     endDate: "",
     location: "",
+    description: "",
   });
 
   const toggleForm = function () {
     setIsOpen(!isOpen);
   };
 
-  const updateEducation = function () {
-    const newEducationItem = [...educationItem];
-    console.log(education);
+  const updateExperience = function () {
+    const newExperienceItem = [...experienceItem];
 
-    if (education.id !== "" || isEditted) {
-      const tempIndex = educationItem.findIndex(
+    if (experience.id !== "" || isEditted) {
+      const tempIndex = experienceItem.findIndex(
         (item) => item.id === edittedItem.id
       );
-      newEducationItem[tempIndex] = edittedItem;
-      setEducationItem(newEducationItem);
-      console.log(educationItem);
+      newExperienceItem[tempIndex] = edittedItem;
+      setExperienceItem(newExperienceItem);
       //  else if (education.id !== "") {
       //   newEducationItem[education.id] = education;
       //   setEducationItem(newEducationItem);
-    } else if (education.id === "") {
+    } else if (experience.id === "") {
       const unique_id = uuid();
 
       // Get first 8 characters using slice
       const small_id = unique_id.slice(0, 8);
-      newEducationItem.push({
-        ...education,
+      newExperienceItem.push({
+        ...experience,
         id: small_id,
       });
-
-      setEducationItem(newEducationItem);
+      setExperienceItem(newExperienceItem);
     }
-    console.log(education);
     resetForm();
   };
 
   const resetForm = function () {
     if (!isEditted)
-      setEducation({
+      setExperience({
         id: "",
-        school: "",
-        degree: "",
+        companyName: "",
+        title: "",
         startDate: "",
         endDate: "",
         location: "",
+        description: "",
       });
     setEdittedItem({
       id: "",
-      school: "",
-      degree: "",
+      companyName: "",
+      title: "",
       startDate: "",
       endDate: "",
       location: "",
+      description: "",
     });
 
     setIsEditted(false);
@@ -97,28 +97,28 @@ export default function EducationForm({
         </button>
       ) : (
         <>
-          <form className="education-form-container mb-4">
+          <form className="experience-form-container mb-4">
             <Input
-              title="School"
+              title="Company name"
               // title={edittedItem.school}
-              placeholder="School or University"
+              placeholder="Google"
               type="text"
-              setValue={(pSchool) => {
-                setEducation({ ...education, school: pSchool });
-                setEdittedItem({ ...edittedItem, school: pSchool });
+              setValue={(pCompanyName) => {
+                setExperience({ ...experience, companyName: pCompanyName });
+                setEdittedItem({ ...edittedItem, companyName: pCompanyName });
               }}
-              value={edittedItem.school}
+              value={edittedItem.companyName}
             ></Input>
 
             <Input
-              title="Degree"
-              placeholder="Degree or Field of study"
+              title="Position title"
+              placeholder="Software Engineer"
               type="text"
-              setValue={(pDegree) => {
-                setEducation({ ...education, degree: pDegree });
-                setEdittedItem({ ...edittedItem, degree: pDegree });
+              setValue={(pTitle) => {
+                setExperience({ ...experience, title: pTitle });
+                setEdittedItem({ ...edittedItem, title: pTitle });
               }}
-              value={edittedItem.degree}
+              value={edittedItem.title}
             ></Input>
 
             <Input
@@ -126,7 +126,7 @@ export default function EducationForm({
               type="text"
               placeholder="08/2023"
               setValue={(pStartDate) => {
-                setEducation({ ...education, startDate: pStartDate });
+                setExperience({ ...experience, startDate: pStartDate });
                 setEdittedItem({ ...edittedItem, startDate: pStartDate });
               }}
               value={edittedItem.startDate}
@@ -137,7 +137,7 @@ export default function EducationForm({
               type="text"
               placeholder="12/2026"
               setValue={(pEndDate) => {
-                setEducation({ ...education, endDate: pEndDate });
+                setExperience({ ...experience, endDate: pEndDate });
                 setEdittedItem({ ...edittedItem, endDate: pEndDate });
               }}
               value={edittedItem.endDate}
@@ -148,10 +148,21 @@ export default function EducationForm({
               type="text"
               placeholder="City, Country"
               setValue={(pLocation) => {
-                setEducation({ ...education, location: pLocation });
+                setExperience({ ...experience, location: pLocation });
                 setEdittedItem({ ...edittedItem, location: pLocation });
               }}
               value={edittedItem.location}
+            ></Input>
+
+            <Input
+              title="Description"
+              type="text"
+              placeholder="Description of your professional experience"
+              setValue={(pDescription) => {
+                setExperience({ ...experience, description: pDescription });
+                setEdittedItem({ ...edittedItem, description: pDescription });
+              }}
+              value={edittedItem.description}
             ></Input>
 
             <div className="flex flex-row-reverse mt-4 mr-2">
@@ -159,7 +170,7 @@ export default function EducationForm({
                 className="border-2 bg-accent rounded-md text-lg px-6 py-1 text-text font-semibold ml-5"
                 onClick={(e) => {
                   e.preventDefault();
-                  updateEducation();
+                  updateExperience();
                 }}
               >
                 Save

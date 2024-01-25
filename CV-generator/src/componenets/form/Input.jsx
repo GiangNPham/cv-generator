@@ -23,7 +23,6 @@ export default function Input({
         id={title}
         placeholder={placeholder}
         className="rounded-md pl-2 mt-1"
-        pattern={type === "tel" && "[0-9]{3}-[0-9]{3}-[0-9]{4}"}
         value={value}
         onChange={(e) => setValue(e.target.value)}
       ></input>

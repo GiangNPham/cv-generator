@@ -1,7 +1,7 @@
 import Thumbnail from "./form/Thumbnail";
 import Input from "./form/Input";
 import EducationList from "../componenets/Education/EducationList.jsx";
-import EducationForm from "./Education/EducationForm.jsx";
+import ExperienceList from "./Experience/ExperienceList.jsx";
 
 export default function Form({
   personalInfo,
@@ -59,7 +59,12 @@ export default function Form({
           setEducationItem={setEducationItem}
         />
       </Thumbnail>
-      <Thumbnail title={"Experience"}></Thumbnail>
+      <Thumbnail title={"Experience"}>
+        <ExperienceList
+          experienceItem={experienceItem}
+          setExperienceItem={setExperienceItem}
+        />
+      </Thumbnail>
 
       {/* 1. Load example button
         2. Clear input

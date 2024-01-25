@@ -4,24 +4,24 @@ import "../../styles/EducationList.css";
 import EducationForm from "./EducationForm";
 import { useState } from "react";
 
-const educationItemsExample = [
-  {
-    id: 0,
-    school: "London City University",
-    degree: "BTS",
-    startDate: "04/2018",
-    endDate: "02/2019",
-    location: "London, UK",
-  },
-  {
-    id: 1,
-    school: "Hidden College",
-    degree: "DUT",
-    startDate: "05/2018",
-    endDate: "03/2019",
-    location: "London, UK",
-  },
-];
+// const educationItemsExample = [
+//   {
+//     id: 0,
+//     school: "London City University",
+//     degree: "BTS",
+//     startDate: "04/2018",
+//     endDate: "02/2019",
+//     location: "London, UK",
+//   },
+//   {
+//     id: 1,
+//     school: "Hidden College",
+//     degree: "DUT",
+//     startDate: "05/2018",
+//     endDate: "03/2019",
+//     location: "London, UK",
+//   },
+// ];
 
 export default function EducationList({ educationItem, setEducationItem }) {
   // setEducationItem(educationItemsExample);
