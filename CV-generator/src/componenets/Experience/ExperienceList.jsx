@@ -3,27 +3,6 @@ import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import ExperienceForm from "./ExperienceForm.jsx";
 import { useState } from "react";
 
-const experienceItemsExample = [
-  {
-    id: "xxxx",
-    companyName: "xx",
-    title: "xx",
-    startDate: "x",
-    endDate: "",
-    location: "",
-    description: "",
-  },
-  {
-    id: "yyyy",
-    companyName: "zz",
-    title: "z",
-    startDate: "",
-    endDate: "",
-    location: "",
-    description: "",
-  },
-];
-
 export default function ExperienceList({ experienceItem, setExperienceItem }) {
   //   setExperienceItem(experienceItemsExample);
 
