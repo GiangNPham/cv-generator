@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.education-list-container .icon-btn {
+  color: #dd9090;
+}

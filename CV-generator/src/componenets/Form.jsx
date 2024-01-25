@@ -1,5 +1,7 @@
 import Thumbnail from "./form/Thumbnail";
 import Input from "./form/Input";
+import EducationList from "../componenets/Education/EducationList.jsx";
+import EducationForm from "./Education/EducationForm.jsx";
 
 export default function Form({
   personalInfo,
@@ -45,7 +47,18 @@ export default function Form({
           }}
         ></Input>
       </Thumbnail>
-      <Thumbnail title={"Education"}></Thumbnail>
+      <Thumbnail title={"Education"}>
+        {/* 1. Education List
+        2. Education add button (inside education form)
+        3. if button is clicked => render education form
+
+         */}
+
+        <EducationList
+          educationItem={educationItem}
+          setEducationItem={setEducationItem}
+        />
+      </Thumbnail>
       <Thumbnail title={"Experience"}></Thumbnail>
 
       {/* 1. Load example button

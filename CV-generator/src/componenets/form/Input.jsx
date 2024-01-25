@@ -1,7 +1,13 @@
 import "../../styles/Input.css";
 
 // eslint-disable-next-line react/prop-types
-export default function Input({ title, placeholder, type, setValue }) {
+export default function Input({
+  title,
+  placeholder,
+  type,
+  setValue,
+  value = "",
+}) {
   return (
     <div
       className={
@@ -9,16 +15,16 @@ export default function Input({ title, placeholder, type, setValue }) {
         (title === "Address" ? " mb-3" : "")
       }
     >
-      <label htmlFor={title} className="text-xl font-semibold">
+      <label htmlFor={title} className="text-xl font-semibold ml-1">
         {title}
       </label>
       <input
         type={type}
         id={title}
         placeholder={placeholder}
-        required
         className="rounded-md pl-2 mt-1"
         pattern={type === "tel" && "[0-9]{3}-[0-9]{3}-[0-9]{4}"}
+        value={value}
         onChange={(e) => setValue(e.target.value)}
       ></input>
     </div>
