@@ -25,7 +25,7 @@ function App() {
           />
           <div className="flex flex-col items-center">
             <button
-              className=" bg-secondary px-5 py-2 rounded-lg text-lg font-semibold"
+              className=" bg-secondary px-5 py-2 rounded-lg text-lg font-semibold mt-2"
               onClick={() => window.print()}
             >
               Print

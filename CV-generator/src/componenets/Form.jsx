@@ -2,6 +2,7 @@ import Thumbnail from "./form/Thumbnail";
 import Input from "./form/Input";
 import EducationList from "../componenets/Education/EducationList.jsx";
 import ExperienceList from "./Experience/ExperienceList.jsx";
+import Example from "./Example.jsx";
 
 export default function Form({
   personalInfo,
@@ -12,7 +13,14 @@ export default function Form({
   setExperienceItem,
 }) {
   return (
-    <div className="flex flex-col items-center mt-20">
+    <div className="flex flex-col items-center mt-10">
+      <div className="mb-5">
+        <Example
+          setPersonalInfo={setPersonalInfo}
+          setEducationItem={setEducationItem}
+          setExperienceItem={setExperienceItem}
+        />
+      </div>
       <Thumbnail title={"Personal detail"}>
         <Input
           title="Full name"
