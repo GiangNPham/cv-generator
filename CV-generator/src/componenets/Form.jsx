@@ -21,6 +21,7 @@ export default function Form({
           setValue={(pFullName) =>
             setPersonalInfo({ ...personalInfo, fullName: pFullName })
           }
+          value={personalInfo.fullName}
         ></Input>
         <Input
           title="Phone number"
@@ -29,6 +30,7 @@ export default function Form({
           setValue={(pPhoneNumber) => {
             setPersonalInfo({ ...personalInfo, phoneNumber: pPhoneNumber });
           }}
+          value={personalInfo.phoneNumber}
         ></Input>
         <Input
           title="Email"
@@ -37,6 +39,7 @@ export default function Form({
           setValue={(pEmail) => {
             setPersonalInfo({ ...personalInfo, email: pEmail });
           }}
+          value={personalInfo.email}
         ></Input>
         <Input
           title="Address"
@@ -45,6 +48,7 @@ export default function Form({
           setValue={(pAddress) => {
             setPersonalInfo({ ...personalInfo, address: pAddress });
           }}
+          value={personalInfo.address}
         ></Input>
       </Thumbnail>
       <Thumbnail title={"Education"}>

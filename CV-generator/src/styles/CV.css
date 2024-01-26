@@ -1,0 +1,15 @@
+.cv-container {
+  min-height: 93vh;
+  max-width: 850px;
+  min-width: 700px;
+}
+
+.cv-container .description {
+  width: 33rem;
+}
+
+@media print {
+  .cv-container .description {
+    width: 25rem;
+  }
+}

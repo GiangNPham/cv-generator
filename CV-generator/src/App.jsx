@@ -14,25 +14,33 @@ function App() {
       </header>
       <main className="grid grid-cols-2">
         {/* Filling out form */}
-        <Form
-          personalInfo={personalInfo}
-          setPersonalInfo={setPersonalInfo}
-          educationItem={educationItem}
-          setEducationItem={setEducationItem}
-          experienceItem={experienceItem}
-          setExperienceItem={setExperienceItem}
-        />
+        <aside>
+          <Form
+            personalInfo={personalInfo}
+            setPersonalInfo={setPersonalInfo}
+            educationItem={educationItem}
+            setEducationItem={setEducationItem}
+            experienceItem={experienceItem}
+            setExperienceItem={setExperienceItem}
+          />
+          <div className="flex flex-col items-center">
+            <button
+              className=" bg-secondary px-5 py-2 rounded-lg text-lg font-semibold"
+              onClick={() => window.print()}
+            >
+              Print
+            </button>
+          </div>
+        </aside>
 
         {/* <h1>{personalInfo}</h1> */}
 
         {/* CV */}
         <CV
+          className="personal"
           personalInfo={personalInfo}
-          setPersonalInfo={setPersonalInfo}
           educationItem={educationItem}
-          setEducationItem={setEducationItem}
           experienceItem={experienceItem}
-          setExperienceItem={setExperienceItem}
         />
       </main>
     </>
