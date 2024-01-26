@@ -20,15 +20,15 @@ export default function ExperienceForm({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [experience, setExperience] = useState({
-    id: "",
-    companyName: "",
-    title: "",
-    startDate: "",
-    endDate: "",
-    location: "",
-    description: "",
-  });
+  // const [experience, setExperience] = useState({
+  //   id: "",
+  //   companyName: "",
+  //   title: "",
+  //   startDate: "",
+  //   endDate: "",
+  //   location: "",
+  //   description: "",
+  // });
 
   const toggleForm = function () {
     setIsOpen(!isOpen);
@@ -37,7 +37,7 @@ export default function ExperienceForm({
   const updateExperience = function () {
     const newExperienceItem = [...experienceItem];
 
-    if (experience.id !== "" || isEditted) {
+    if (edittedItem.id !== "" || isEditted) {
       const tempIndex = experienceItem.findIndex(
         (item) => item.id === edittedItem.id
       );
@@ -46,13 +46,13 @@ export default function ExperienceForm({
       //  else if (education.id !== "") {
       //   newEducationItem[education.id] = education;
       //   setEducationItem(newEducationItem);
-    } else if (experience.id === "") {
+    } else if (edittedItem.id === "") {
       const unique_id = uuid();
 
       // Get first 8 characters using slice
       const small_id = unique_id.slice(0, 8);
       newExperienceItem.push({
-        ...experience,
+        ...edittedItem,
         id: small_id,
       });
       setExperienceItem(newExperienceItem);
@@ -61,16 +61,16 @@ export default function ExperienceForm({
   };
 
   const resetForm = function () {
-    if (!isEditted)
-      setExperience({
-        id: "",
-        companyName: "",
-        title: "",
-        startDate: "",
-        endDate: "",
-        location: "",
-        description: "",
-      });
+    // if (!isEditted)
+    //   setExperience({
+    //     id: "",
+    //     companyName: "",
+    //     title: "",
+    //     startDate: "",
+    //     endDate: "",
+    //     location: "",
+    //     description: "",
+    //   });
     setEdittedItem({
       id: "",
       companyName: "",
@@ -97,14 +97,14 @@ export default function ExperienceForm({
         </button>
       ) : (
         <>
-          <form className="experience-form-container mb-4">
+          <form className="mb-4">
             <Input
               title="Company name"
               // title={edittedItem.school}
               placeholder="Google"
               type="text"
               setValue={(pCompanyName) => {
-                setExperience({ ...experience, companyName: pCompanyName });
+                // setExperience({ ...experience, companyName: pCompanyName });
                 setEdittedItem({ ...edittedItem, companyName: pCompanyName });
               }}
               value={edittedItem.companyName}
@@ -115,7 +115,7 @@ export default function ExperienceForm({
               placeholder="Software Engineer"
               type="text"
               setValue={(pTitle) => {
-                setExperience({ ...experience, title: pTitle });
+                // setExperience({ ...experience, title: pTitle });
                 setEdittedItem({ ...edittedItem, title: pTitle });
               }}
               value={edittedItem.title}
@@ -126,7 +126,7 @@ export default function ExperienceForm({
               type="text"
               placeholder="08/2023"
               setValue={(pStartDate) => {
-                setExperience({ ...experience, startDate: pStartDate });
+                // setExperience({ ...experience, startDate: pStartDate });
                 setEdittedItem({ ...edittedItem, startDate: pStartDate });
               }}
               value={edittedItem.startDate}
@@ -137,7 +137,7 @@ export default function ExperienceForm({
               type="text"
               placeholder="12/2026"
               setValue={(pEndDate) => {
-                setExperience({ ...experience, endDate: pEndDate });
+                // setExperience({ ...experience, endDate: pEndDate });
                 setEdittedItem({ ...edittedItem, endDate: pEndDate });
               }}
               value={edittedItem.endDate}
@@ -148,7 +148,7 @@ export default function ExperienceForm({
               type="text"
               placeholder="City, Country"
               setValue={(pLocation) => {
-                setExperience({ ...experience, location: pLocation });
+                // setExperience({ ...experience, location: pLocation });
                 setEdittedItem({ ...edittedItem, location: pLocation });
               }}
               value={edittedItem.location}
@@ -159,10 +159,11 @@ export default function ExperienceForm({
               type="text"
               placeholder="Description of your professional experience"
               setValue={(pDescription) => {
-                setExperience({ ...experience, description: pDescription });
+                // setExperience({ ...experience, description: pDescription });
                 setEdittedItem({ ...edittedItem, description: pDescription });
               }}
               value={edittedItem.description}
+              extraHeight={true}
             ></Input>
 
             <div className="flex flex-row-reverse mt-4 mr-2">

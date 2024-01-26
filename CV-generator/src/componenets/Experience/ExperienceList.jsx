@@ -14,7 +14,15 @@ export default function ExperienceList({ experienceItem, setExperienceItem }) {
 
   const [isEditted, setIsEditted] = useState(false);
 
-  const [copy, setCopy] = useState({});
+  const [copy, setCopy] = useState({
+    id: "",
+    companyName: "",
+    title: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+    description: "",
+  });
 
   const editExperience = function (item) {
     setCopy(item);

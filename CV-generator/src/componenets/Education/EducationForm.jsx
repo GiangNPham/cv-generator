@@ -19,14 +19,14 @@ export default function EducationForm({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [education, setEducation] = useState({
-    id: "",
-    school: "",
-    degree: "",
-    startDate: "",
-    endDate: "",
-    location: "",
-  });
+  // const [education, setEducation] = useState({
+  //   id: "",
+  //   school: "",
+  //   degree: "",
+  //   startDate: "",
+  //   endDate: "",
+  //   location: "",
+  // });
 
   const toggleForm = function () {
     setIsOpen(!isOpen);
@@ -34,44 +34,41 @@ export default function EducationForm({
 
   const updateEducation = function () {
     const newEducationItem = [...educationItem];
-    console.log(education);
 
-    if (education.id !== "" || isEditted) {
+    if (edittedItem.id !== "" || isEditted) {
       const tempIndex = educationItem.findIndex(
         (item) => item.id === edittedItem.id
       );
       newEducationItem[tempIndex] = edittedItem;
       setEducationItem(newEducationItem);
-      console.log(educationItem);
       //  else if (education.id !== "") {
       //   newEducationItem[education.id] = education;
       //   setEducationItem(newEducationItem);
-    } else if (education.id === "") {
+    } else if (edittedItem.id === "") {
       const unique_id = uuid();
 
       // Get first 8 characters using slice
       const small_id = unique_id.slice(0, 8);
       newEducationItem.push({
-        ...education,
+        ...edittedItem,
         id: small_id,
       });
 
       setEducationItem(newEducationItem);
     }
-    console.log(education);
     resetForm();
   };
 
   const resetForm = function () {
-    if (!isEditted)
-      setEducation({
-        id: "",
-        school: "",
-        degree: "",
-        startDate: "",
-        endDate: "",
-        location: "",
-      });
+    // if (!isEditted)
+    //   setEducation({
+    //     id: "",
+    //     school: "",
+    //     degree: "",
+    //     startDate: "",
+    //     endDate: "",
+    //     location: "",
+    //   });
     setEdittedItem({
       id: "",
       school: "",
@@ -104,7 +101,7 @@ export default function EducationForm({
               placeholder="School or University"
               type="text"
               setValue={(pSchool) => {
-                setEducation({ ...education, school: pSchool });
+                // setEducation({ ...education, school: pSchool });
                 setEdittedItem({ ...edittedItem, school: pSchool });
               }}
               value={edittedItem.school}
@@ -115,7 +112,7 @@ export default function EducationForm({
               placeholder="Degree or Field of study"
               type="text"
               setValue={(pDegree) => {
-                setEducation({ ...education, degree: pDegree });
+                // setEducation({ ...education, degree: pDegree });
                 setEdittedItem({ ...edittedItem, degree: pDegree });
               }}
               value={edittedItem.degree}
@@ -126,7 +123,7 @@ export default function EducationForm({
               type="text"
               placeholder="08/2023"
               setValue={(pStartDate) => {
-                setEducation({ ...education, startDate: pStartDate });
+                // setEducation({ ...education, startDate: pStartDate });
                 setEdittedItem({ ...edittedItem, startDate: pStartDate });
               }}
               value={edittedItem.startDate}
@@ -137,7 +134,7 @@ export default function EducationForm({
               type="text"
               placeholder="12/2026"
               setValue={(pEndDate) => {
-                setEducation({ ...education, endDate: pEndDate });
+                // setEducation({ ...education, endDate: pEndDate });
                 setEdittedItem({ ...edittedItem, endDate: pEndDate });
               }}
               value={edittedItem.endDate}
@@ -148,7 +145,7 @@ export default function EducationForm({
               type="text"
               placeholder="City, Country"
               setValue={(pLocation) => {
-                setEducation({ ...education, location: pLocation });
+                // setEducation({ ...education, location: pLocation });
                 setEdittedItem({ ...edittedItem, location: pLocation });
               }}
               value={edittedItem.location}

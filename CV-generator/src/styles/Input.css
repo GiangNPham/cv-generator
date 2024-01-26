@@ -4,12 +4,20 @@
 
 .input-container input {
   background-color: #dddddd;
-  height: 2.9rem;
+  width: 98%;
+}
 
+.input-container textarea {
+  background-color: #dddddd;
   width: 98%;
 }
 
 .input-container input::placeholder {
+  color: black;
+  opacity: 0.75;
+}
+
+.input-container textarea::placeholder {
   color: black;
   opacity: 0.75;
 }

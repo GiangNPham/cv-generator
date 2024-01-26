@@ -34,7 +34,14 @@ export default function EducationList({ educationItem, setEducationItem }) {
 
   const [isEditted, setIsEditted] = useState(false);
 
-  const [copy, setCopy] = useState({});
+  const [copy, setCopy] = useState({
+    id: "",
+    school: "",
+    degree: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+  });
 
   const editEducation = function (item) {
     setCopy(item);
