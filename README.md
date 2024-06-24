@@ -1,5 +1,5 @@
-CV Generator made by GP
+#CV Generator made by GP
 
-A website to create a CV for you
+A CV-creating tool: [website](https://cv-generator-indol.vercel.app/)
 
-Made with React 
+Made with ReactJS
